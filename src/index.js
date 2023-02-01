@@ -1,23 +1,34 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import './index.css';
+// import React from 'react'
+// import ReactDOM from 'react-dom'
+// import { Provider } from 'react-redux'
+import './index.css'
+// import App from './App'
 
-const container = document.getElementById('root');
-const root = createRoot(container);
+// import './api/server'
 
-root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
-);
+// import store from './store'
+// import { fetchTodos } from './features/todos/todosSlice'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// store.dispatch(fetchTodos())
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Provider store={store}>
+//       <App />
+//     </Provider>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// )
+
+import store from './store'
+
+store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
+// log: '1'
+// log: '2'
+// log: '3'
+
+// console.log('Dispatching action')
+// store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
+// console.log('Dispatch complete')
+// console.log('State after dispatch: ', store.getState())
+// log: {todos: [...], filters: {status, colors}, meaningOfLife: 42}
